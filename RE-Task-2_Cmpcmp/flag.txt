@@ -1,0 +1,25 @@
+T915{1N5TRUC710NS_4R3_B3TT3R}
+
+Approach:
+1. Tool Used: Ghidra was used to analyze the binary `cmpcmp.exe`.
+   - Imported the binary into Ghidra for static analysis.
+   - Allowed Ghidra to perform the automatic analysis to generate decompiled code.
+
+2. Decompilation:
+   - Located the function `FUN_00401000`, which appeared to handle user input and validation.
+   - Decompiled the function and observed the logic used to validate the input.
+
+3. Input Validation Logic:
+   - The function used a series of character-by-character comparisons against specific values stored in the program.
+   - The expected characters were identified from local variables like `local_6c`, `local_6b`, etc., each compared to a specific character (e.g., `local_6c == 'T'`).
+
+4. Reconstruction of the Input:
+   - Extracted all the characters in order of their comparison.
+   - Combined the characters into the full string: `T915{1N5TRUC710NS_4R3_B3TT3R}`.
+
+5. Verification:
+   - Ran the binary and entered the reconstructed input.
+   - Verified that the program printed "Correct!" for this input.
+
+6. Flag Creation:
+   - Saved the reconstructed string as `flag.txt` for submission.
